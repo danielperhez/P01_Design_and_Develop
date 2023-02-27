@@ -47,23 +47,5 @@ for u in User.select():
 for c in Card.select():
     print(c.id, c.card_number, c.account, c.register_date, c.initial_amount)
 
-
-transaction = TicketController.transaction(5600)
-
-for r in Retirar.select():
-    print(r.amount_to_get)
-
-#TicketController.scan_ticket(jane_ticket)
-#
-#for t in Ticket.select():
-#    print(t.id, t.user, t.movie, t.qr, t.status)
-#
-#try:
-#    TicketController.scan_ticket(jane_ticket)
-#except ValueError:
-#    print("Can't scan an expired ticket!")
-
-## This deletes all rows
-#Ticket.delete().execute()
 User.delete().execute()
 Card.delete().execute()

@@ -8,9 +8,9 @@ db = SqliteDatabase('card.db')
 
 class Retirar(Model):
 
-    amount_to_get = IntegerField()
-    initial_amount = IntegerField()
-
+    user = ForeignKeyField(User, backref='tickets')
+    card = ForeignKeyField(Card, backref='tickets')
+    amount = IntegerField()
 
     class Meta:
         database = db

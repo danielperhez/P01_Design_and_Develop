@@ -10,6 +10,10 @@ class CardController:
         card = Card(card_number=card_number,
                     account=account,
                     register_date=register_date,
-                    initial_amount=initial_amount)
+                    initial_amount=f"initial amount: {initial_amount}")
         card.save()
         return card
+    
+    def retirar(card: Card, retirar: int):
+        final = 10000 - retirar
+        final.save()
