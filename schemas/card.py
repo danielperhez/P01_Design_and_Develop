@@ -1,13 +1,13 @@
-import peewee
 from peewee import *
 
-db = SqliteDatabase('prueba_union.db')
+db = SqliteDatabase('card.db')
 
 
 class Card(Model):
-    card_Number = CharField()
+    card_number = CharField()
+    account = CharField()
     register_date = DateTimeField()
-    Account = CharField()
+    initial_amount = IntegerField()
 
     class Meta:
         database = db  # This model uses the "movies.db" database.

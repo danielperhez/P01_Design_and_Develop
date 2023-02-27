@@ -1,28 +1,30 @@
 from random import randint
 
-#from schemas.card import Card
-#from schemas.ticket import Ticket
-#from schemas.user import User
-
 from schemas.card import Card
+from schemas.ticket import Retirar
+from schemas.user import User
 
 
 class TicketController:
 
     @staticmethod
-    def buy_ticket(user: User, card: Card) -> Ticket:
-        # TODO: Validate movie date, and stuff like that
-        ticket = Ticket(user=user.id,
-                        card=card.id,
-                        proxy=f"{card.id}-{randint(10000, 99999)}",
-                        status=True)
-        ticket.save()
-        return ticket
+    def transaction(amount_to_get: int, initial_amount = int) -> Retirar:
+        retirar = Retirar(amount_to_get=amount_to_get, initial_amount=initial_amount)
 
-    @staticmethod
-    def scan_ticket(ticket: Ticket) -> None:
-        if not ticket.status:
-            raise ValueError("Your ticket is expired.")
+    #def transaction(user: User, card: Card, amount: int) -> Ticket:
+    #    amount = amount
+    #    ticket = Ticket(user=user.id,
+    #                    card=card.id,
+    #                    proxy=f"{card.id}-{randint(10000, 99999)}",
+    #                    amount = amount,
+    #                    status=True)
+        retirar.save()
+        return retirar
 
-        ticket.status = False
-        ticket.save()
+    #@staticmethod
+    #def scan_ticket(ticket: Ticket) -> None:
+    #    if not ticket.status:
+    #        raise ValueError("Can't make the transaction")
+
+     #   ticket.status = False
+      #  ticket.save()

@@ -6,7 +6,10 @@ from schemas.card import Card
 class CardController:
 
     @staticmethod
-    def create_card(card_Number: str, Account: str,register_date:datetime) -> Card:
-        card = Card(card_Number=card_Number, Account=Account, register_date=register_date)
+    def create_card(card_number: str, account: str, register_date: datetime, initial_amount: int) -> Card:
+        card = Card(card_number=card_number,
+                    account=account,
+                    register_date=register_date,
+                    initial_amount=initial_amount)
         card.save()
         return card

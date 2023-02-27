@@ -1,6 +1,6 @@
 from peewee import *
 
-db = SqliteDatabase('prueba_union.db')
+db = SqliteDatabase('card.db')
 
 
 class User(Model):
@@ -9,9 +9,8 @@ class User(Model):
     second_name = CharField()
     phone_number = CharField()
     email = CharField()
-    #Bday = DateField()
-    adress = CharField()
-    ExternNumber = IntegerField()
+    address = CharField()
+    extern_number = IntegerField()
 
     class Meta:
-        database = db  # This model uses the "movies.db" database.
+        database = db  # This model uses the "card.db" database.

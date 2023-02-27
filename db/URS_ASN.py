@@ -1,8 +1,8 @@
 from peewee import SqliteDatabase
 
 from schemas.card import Card
-from schemas.ticket import Ticket
+from schemas.ticket import Retirar
 from schemas.user import User
 
-db = SqliteDatabase('prueba_union.db')
-db.create_tables([User, Card, Ticket])
+db_card = SqliteDatabase('card.db')
+db_card.create_tables([User,Card,Retirar])
