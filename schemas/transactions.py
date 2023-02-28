@@ -11,5 +11,6 @@ class Transactions(Model):
     date = DateField()
     description = CharField()
     transaction_key = int()
+    
     class Meta:
         database = db  # This model uses the "card.db" database.
