@@ -1,13 +1,13 @@
 from datetime import datetime
 
-from controllers.ticket_controller import TicketController
+from controllers.account_controller import TicketController
 from controllers.user_controller import UserController
 from controllers.card_controller import CardController
 
 from db import URS_ASN
 
 from schemas.card import Card
-#from schemas.account import Account
+from schemas.account import Account
 from schemas.user import User
 
 

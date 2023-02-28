@@ -1,17 +1,14 @@
-from random import randint
+from datetime import datetime
 
-from schemas.card import Card
 from schemas.account import Account
-from schemas.user import User
 
 
-class TicketController:
+class AccountController:
 
     @staticmethod
-    def retirar(user: User, card: Card, amount: int) -> Account:
+    def create_account(user: int, card: str, type: str) -> Account:
         account = Account(user=user.id,
-                        card=card.id,
-                        amount=amount)
-        
+                    card=card,
+                    type=f"TransactionType: {type}")
         account.save()
         return account
