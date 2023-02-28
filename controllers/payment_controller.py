@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from schemas.Account import Account
+from schemas.account import Account
 from schemas.payments import Payments
 
 

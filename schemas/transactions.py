@@ -1,6 +1,6 @@
 from peewee import *
 
-from schemas.Account import Account
+from schemas.account import Account
 
 db = SqliteDatabase('card.db')
 

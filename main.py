@@ -40,6 +40,16 @@ card2 = CardController.create_card(card_number="7856892145632010",
                                    register_date=datetime(2023, 2, 14, 2, 56, 45),
                                    initial_amount=10000)
 
+account1 = AccountController.create_account(account=1,card=card1.card_number,type="Credit")
+
+account2 = AccountController.create_account(account=2,card=card2.card_number,type="Credit")
+
+payment1 = PaymentsController.create_payments(account=1,amount=1200,date=datetime(2023, 2, 14, 2, 56, 45),payment_id=15)
+
+payment2 = PaymentsController.create_payments(account=2,amount=536,date=datetime(2023, 7, 7, 5, 34, 52),payment_id=10)
+
+
+
 for u in User.select():
     print(u.id, u.names, u.first_name, u.second_name, u.phone_number, u.email, u.address, u.extern_number)
 
@@ -49,4 +59,5 @@ for c in Card.select():
 
 User.delete().execute()
 Card.delete().execute()
+Account.delete().execute()
 
