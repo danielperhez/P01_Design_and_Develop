@@ -1,7 +1,7 @@
 from peewee import SqliteDatabase
 
 from schemas.card import Card
-from schemas.ticket import Retirar
+from schemas.account import Retirar
 from schemas.user import User
 
 db_card = SqliteDatabase('card.db')

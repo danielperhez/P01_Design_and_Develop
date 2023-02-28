@@ -1,15 +1,15 @@
 from peewee import *
 
+from schemas.Account import Account
+
 db = SqliteDatabase('card.db')
 
 
 class Payments(Model):
-    payer = CharField()
-    payee = CharField()
-    amount = DateTimeField()
-    date = IntegerField()
-    payment_method = CharField()
-    transaction_key = IntegerField()
+    account = ForeignKeyField(Account, backref="payments")
+    amount = float()
+    date = DateField()
+    payment_id = int()
 
     class Meta:
-        database = db
+        database = db  # This model uses the "card.db" database.

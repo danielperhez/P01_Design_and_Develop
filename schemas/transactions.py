@@ -1,16 +1,15 @@
 from peewee import *
 
-from schemas.ticket import Retirar
+from schemas.Account import Account
 
 db = SqliteDatabase('card.db')
 
 
 class Transactions(Model):
-    account = ForeignKeyField(Retirar, backref='tickets')
-    amount = IntegerField()
-    date = IntegerField()
+    account = ForeignKeyField(Account,backref="transactions")
+    amount = float()
+    date = DateField()
     description = CharField()
-    transaction_key = IntegerField()
-
+    transaction_key = int()
     class Meta:
-        database = db
+        database = db  # This model uses the "card.db" database.

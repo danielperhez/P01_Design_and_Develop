@@ -1,14 +1,18 @@
 from datetime import datetime
 
-from controllers.account_controller import TicketController
+from controllers.account_controller import AccountController
 from controllers.user_controller import UserController
 from controllers.card_controller import CardController
+from controllers.payment_controller import PaymentsController
+from controllers.transaction_controller import TransactionController
 
 from db import URS_ASN
 
 from schemas.card import Card
 from schemas.account import Account
 from schemas.user import User
+from schemas.payments import Payments
+from schemas.transactions import Transactions
 
 
 
@@ -45,3 +49,4 @@ for c in Card.select():
 
 User.delete().execute()
 Card.delete().execute()
+
