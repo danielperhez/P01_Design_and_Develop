@@ -7,9 +7,10 @@ db = SqliteDatabase('card.db')
 
 class Payments(Model):
     account = ForeignKeyField(Account, backref="payments")
-    amount = float()
+    amount = FloatField()
     date = DateField()
-    payment_id = int()
+    payment_id = IntegerField()
 
     class Meta:
         database = db  # This model uses the "card.db" database.
+

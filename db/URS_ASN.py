@@ -1,10 +1,15 @@
 from peewee import SqliteDatabase
 
+
 from schemas.card import Card
-from schemas.account import Account
-from schemas.user import User
+from schemas.Account import Account
 from schemas.payments import Payments
 from schemas.transactions import Transactions
+from schemas.user import User
 
-db_card = SqliteDatabase('card.db')
-db_card.create_tables([User,Card,Account,Payments,Transactions])
+
+
+
+def create_db(path: str):
+    db = SqliteDatabase(path)
+    db.create_tables([User, Account, Card, Transactions, Payments])

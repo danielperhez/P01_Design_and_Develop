@@ -4,11 +4,13 @@ db = SqliteDatabase('card.db')
 
 
 class User(Model):
-    name = CharField()
+    names = CharField()
+    first_name = CharField()
+    second_name = CharField()
     phone_number = CharField()
     email = CharField()
     address = CharField()
-    password = CharField()
+    extern_number = IntegerField()
 
     class Meta:
         database = db  # This model uses the "card.db" database.

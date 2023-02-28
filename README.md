@@ -44,20 +44,3 @@ Running Locally
 
 Testing
 --------
-
-Run tests with `pytest`:
-
-```shell
-  pytest -v
-```
-
-Run tests with `coverage`:
-
-```shell
-  coverage run -m pytest
-```
-
-Coverage report:
-```shell
-  coverage report
-```
