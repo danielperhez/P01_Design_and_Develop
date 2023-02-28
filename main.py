@@ -7,28 +7,24 @@ from controllers.card_controller import CardController
 from db import URS_ASN
 
 from schemas.card import Card
-from schemas.ticket import Retirar
+#from schemas.account import Account
 from schemas.user import User
 
 
 
-user1 = UserController.new_user(names="Jesus Israel",
-                                first_name="Reyes",
-                                second_name="Valdez",
+user1 = UserController.new_user(name="Jesus Israel",
                                 phone_number="3323-8405-20",
                                 email="reyes0valdez0@gmail.com",
                                 address="Frida Kahlo",
-                                extern_number=108)
+                                password="abcdefg")
 
 
 
-user2 = UserController.new_user(names="Alan",
-                                first_name="Maldonado",
-                                second_name="Jimenez",
+user2 = UserController.new_user(name="Alan",
                                 phone_number="3233-8432-21",
                                 email="alan120@outlook.com",
                                 address="Guadalajara centro",
-                                extern_number=13)
+                                password="porhdkns")
 
 card1 = CardController.create_card(card_number="41523136989065",
                                    account="12345678",

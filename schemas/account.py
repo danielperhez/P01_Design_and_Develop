@@ -10,7 +10,9 @@ class Retirar(Model):
 
     user = ForeignKeyField(User, backref='tickets')
     card = ForeignKeyField(Card, backref='tickets')
-    amount = IntegerField()
+    balance = IntegerField()
+    cut = register_date = DateTimeField()
+    type = CharField()
 
     class Meta:
         database = db
